@@ -14,6 +14,7 @@
 \usepackage{graphicx}                       % Importing graphics
 \usepackage[export]{adjustbox}              % Aligning margins
 \usepackage{import}
+% \usepackage{bibunits}
 
 % % Chinese
 % \usepackage{xeCJK}
@@ -101,7 +102,12 @@
 % Section titles
 \titleformat{\section}{
     \scshape\raggedright\Large\color{color-title}}{}{0em}{}[\color{color-title}\titlerule
-    \vspace{-\smallskipamount}]
+  \vspace{-\smallskipamount}]
+
+\titleformat{\subsection}{
+    \raggedright\large\color{color-title}}{}{0em}{}[\color{color-title}
+  % \vspace{-\smallskipamount}
+  ]  
 
 % Footer
 \fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
@@ -112,8 +118,7 @@
 \newcommand{\denseouterlist}[1]{
     \begin{itemize}[leftmargin=*,itemsep=0pt] #1 \end{itemize}}
 \newcommand{\innerlist}[1]{
-  \begin{itemize}[topsep=0pt]
-    \setlength{\leftmargini}{1.00em} % default 2.5em
+  \begin{itemize}[topsep=0pt,leftmargin=*]
     \setlength{\itemsep}{0pt}%
     \setlength{\parsep}{0pt}
     \setlength{\parskip}{0pt}
@@ -126,7 +131,7 @@
 \newcommand{\entry}[1]{\item\small{#1}}
 \newcommand{\entryextra}[1]{\textcolor{color-detail}{\entry{#1}}}
 \newcommand{\entrylabeled}[2][]{\item[#1]\small{#2}}
-\newcommand{\entrynomargin}[1]{\item[]{\small{#1}}}
+\newcommand{\entrynolabel}[1]{\item[]{\small{#1}}}
 
 \newcommand{\entrymid}[4][]{
     \item[#1] \small{#2} \hfill \small{#3}
